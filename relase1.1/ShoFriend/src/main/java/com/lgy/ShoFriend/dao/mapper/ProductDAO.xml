@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lgy.ShoFriend.dao.ProductDAO">
+	
+    <insert id="write">
+	    insert into product(store_id, category_id, title, description, price, stock, status, picture, discount_start, discount_end, discount_percentage) values(#{store_id},#{category_id},#{title},#{description},#{price},#{stock},#{status},#{picture},#{discount_start},#{discount_end},COALESCE(#{discount_percentage},0))
+    </insert>
+    
+    <select id="list" resultType="com.lgy.ShoFriend.dto.ProductDTO">
+        select id, store_id, category_id, title, description, price, stock, status, picture, discount_start, discount_end, discount_percentage from product
+    </select>
+    
+</mapper>
