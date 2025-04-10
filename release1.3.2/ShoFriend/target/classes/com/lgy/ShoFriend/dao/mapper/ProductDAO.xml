@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lgy.ShoFriend.dao.ProductDAO">
+	
+    <insert id="product_write">
+	    insert into product(store_id, category_id, title, description, price, stock, status, picture, discount_start, discount_end, discount_percentage) values(#{store_id},#{category_id},#{title},#{description},#{price},#{stock},#{status},#{picture},#{discount_start},#{discount_end},COALESCE(#{discount_percentage},0))
+    </insert>
+    
+    <select id="list" resultType="com.lgy.ShoFriend.dto.ProductDTO">
+        select id, store_id, category_id, title, description, price, stock, status, picture, recommend, discount_start, discount_end, discount_percentage from product order by id desc
+    </select>
+    
+    <select id="categorylist" resultType="com.lgy.ShoFriend.dto.CategoryDTO">
+        select id, name from category;
+    </select>
+    
+    <select id="getProductById" parameterType="int" resultType="com.lgy.ShoFriend.dto.ProductDTO">
+    	SELECT * FROM product WHERE id = #{product_id}
+	</select>
+	
+	<select id="selectFlashSaleItems" resultType="com.lgy.ShoFriend.dto.ProductDTO">
+      <![CDATA[
+	    SELECT *
+	    FROM product
+	    WHERE discount_end IS NOT NULL
+	      AND discount_start <= NOW()
+	      AND discount_end > NOW()
+	      AND TIMESTAMPDIFF(HOUR, NOW(), discount_end) <= 24
+	    ORDER BY discount_end ASC
+	  ]]>
+	</select>
+	
+	<update id="product_modify">
+		update product set category_id=#{category_id}, title=#{title}, description=#{description}
+		, price=#{price}, stock=#{stock}, status=#{status}, picture=#{picture}
+		, discount_start=#{discount_start}, discount_end=#{discount_end}, discount_percentage=COALESCE(#{discount_percentage},0)
+		 where id=#{id} 
+	</update>
+
+</mapper>
