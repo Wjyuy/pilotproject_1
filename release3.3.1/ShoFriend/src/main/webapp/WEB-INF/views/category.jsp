@@ -41,7 +41,7 @@
 			</nav>
 			<br>
 			<br>
-		<h1>쇼프렌입니다</h1>
+<!-- 		<h1>쇼프렌입니다</h1> -->
 	<img class="test_obj" src="resources/images/ShoFriend_rogo.PNG" class="img-fluid" alt="...">
 			<br>
 			<br>
@@ -58,7 +58,7 @@
 			</nav>
 			<br>
 			<br>
-		<h1>쇼프렌입니다</h1>
+<!-- 		<h1>쇼프렌입니다</h1> -->
 			<img class="test_obj" src="resources/images/ShoFriend_rogo.PNG" class="img-fluid" alt="...">
 			<br>
 			<br>
@@ -75,7 +75,7 @@
 	
 			<br>
 			<br>
-		<h1>쇼프렌입니다</h1>
+<!-- 		<h1>쇼프렌입니다</h1> -->
 		<img class="test_obj" src="resources/images/ShoFriend_rogo.PNG" class="img-fluid" alt="...">
 			<br>
 			<br>
