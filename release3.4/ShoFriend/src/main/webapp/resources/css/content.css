@@ -1,0 +1,33 @@
+@charset "UTF-8";
+//25.04.14 김채윤
+body{ 
+	height: 100vh;
+	width: 100%;
+	margin: 0;
+}
+
+
+.product-container{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap:40px;
+	padding: 40px;
+}
+.product-image img{
+	
+	width: 600px;
+	height: auto;
+	border: 1px solid #ccc;
+	object-fit: cover;
+	border-radius: 8px;
+}
+.product-info{
+	max-width: 400px;
+	flex:1;
+}
+.product-description{
+	max-width: 1000px;
+	flex:1;
+}
+
