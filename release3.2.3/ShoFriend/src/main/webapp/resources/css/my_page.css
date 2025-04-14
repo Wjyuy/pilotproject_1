@@ -1,0 +1,26 @@
+@charset "UTF-8";
+body{ 
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	background-color: #e9ecef;
+}
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%
+}
+.form-box{
+
+	max-width: 800px;
+	margin: 100px auto;
+	background-color: white;
+	padding: 40px;
+	border-radius: 10px;
+	box-shadow: 0 0 15 px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
